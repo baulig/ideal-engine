@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2E0274C0-C6AC-422B-9414-A6940744F817}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ConsoleTest</RootNamespace>
+    <AssemblyName>ConsoleTest</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ExternalConsole>true</ExternalConsole>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="Mono.Security" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\Hamiller-Tube-CA.key">
+      <Link>Hamiller-Tube-CA.key</Link>
+      <LogicalName>Hamiller-Tube-CA.key</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Hamiller-Tube-CA.pem">
+      <Link>Hamiller-Tube-CA.pem</Link>
+      <LogicalName>Hamiller-Tube-CA.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Hamiller-Tube-IM.key">
+      <Link>Hamiller-Tube-IM.key</Link>
+      <LogicalName>Hamiller-Tube-IM.key</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="..\Hamiller-Tube-IM.pem">
+      <Link>Hamiller-Tube-IM.pem</Link>
+      <LogicalName>Hamiller-Tube-IM.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="server-cert-trusted-im.key">
+      <LogicalName>server-cert-trusted-im.key</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="server-cert-trusted-im.pem">
+      <LogicalName>server-cert-trusted-im.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="server-cert-trusted-im.pfx">
+      <LogicalName>server-cert-trusted-im.pfx</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="server-cert-im-full.pfx">
+      <LogicalName>server-cert-im-full.pfx</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="..\Shared\Shared.projitems" Label="Shared" Condition="Exists('..\Shared\Shared.projitems')" />
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+</Project>

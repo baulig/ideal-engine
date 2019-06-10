@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DroidTest", "DroidTest.csproj", "{C98899D5-3AD2-4999-813F-2E531C76AE1D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{2E0274C0-C6AC-422B-9414-A6940744F817}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Shared", "Shared\Shared.shproj", "{382BBD0B-E511-4EE8-BBC6-2266184AA097}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C98899D5-3AD2-4999-813F-2E531C76AE1D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C98899D5-3AD2-4999-813F-2E531C76AE1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C98899D5-3AD2-4999-813F-2E531C76AE1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C98899D5-3AD2-4999-813F-2E531C76AE1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E0274C0-C6AC-422B-9414-A6940744F817}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E0274C0-C6AC-422B-9414-A6940744F817}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E0274C0-C6AC-422B-9414-A6940744F817}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E0274C0-C6AC-422B-9414-A6940744F817}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
