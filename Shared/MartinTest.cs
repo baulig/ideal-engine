@@ -24,12 +24,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
+using System.Diagnostics;
+using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 
 namespace Shared {
 	public static class MartinTest {
 		public static async Task Run ()
+		{
+			await TestHttpClient ();
+		}
+
+		static async Task TestClientServer ()
 		{
 			var serverTask = Server.Run ();
 			var clientTask = Client.Run ();
@@ -42,6 +49,25 @@ namespace Shared {
 				if (clientTask.IsCompleted)
 					await clientTask;
 			}
+		}
+
+		public static async Task TestHttpClient ()
+		{
+			var client = new HttpClient ();
+			client.Timeout = TimeSpan.FromSeconds (150);
+
+			var watch = new Stopwatch ();
+			watch.Start ();
+
+			using (var cts = new CancellationTokenSource ()) {
+				// cts.CancelAfter (100);
+				await client.GetAsync ("https://httpstat.us/200?sleep=500000", cts.Token);
+			}
+
+			watch.Stop ();
+
+			Console.Error.WriteLine ($"HTTP CLIENT DONE: {watch.ElapsedMilliseconds}");
+			Console.Error.WriteLine ();
 		}
 	}
 }

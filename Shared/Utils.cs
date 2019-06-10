@@ -34,9 +34,6 @@ namespace Shared {
 		public static byte [] ReadResource (string name)
 		{
 			var asm = Assembly.GetExecutingAssembly ();
-			foreach (var res in asm.GetManifestResourceNames ())
-				Console.WriteLine (res);
-
 			using (var stream = asm.GetManifestResourceStream (name)) {
 				var buffer = new byte [stream.Length];
 				var ret = stream.Read (buffer, 0, buffer.Length);
