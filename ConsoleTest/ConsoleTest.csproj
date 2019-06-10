@@ -37,32 +37,36 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="..\Hamiller-Tube-CA.key">
-      <Link>Hamiller-Tube-CA.key</Link>
+    <EmbeddedResource Include="..\CA\Hamiller-Tube-CA.key">
+      <Link>CA/Hamiller-Tube-CA.key</Link>
       <LogicalName>Hamiller-Tube-CA.key</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\Hamiller-Tube-CA.pem">
-      <Link>Hamiller-Tube-CA.pem</Link>
+    <EmbeddedResource Include="..\CA\Hamiller-Tube-CA.pem">
+      <Link>CA/Hamiller-Tube-CA.pem</Link>
       <LogicalName>Hamiller-Tube-CA.pem</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\Hamiller-Tube-IM.key">
-      <Link>Hamiller-Tube-IM.key</Link>
+    <EmbeddedResource Include="..\CA\Hamiller-Tube-IM.key">
+      <Link>CA/Hamiller-Tube-IM.key</Link>
       <LogicalName>Hamiller-Tube-IM.key</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="..\Hamiller-Tube-IM.pem">
-      <Link>Hamiller-Tube-IM.pem</Link>
+    <EmbeddedResource Include="..\CA\Hamiller-Tube-IM.pem">
+      <Link>CA/Hamiller-Tube-IM.pem</Link>
       <LogicalName>Hamiller-Tube-IM.pem</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="server-cert-trusted-im.key">
+    <EmbeddedResource Include="..\CA\server-cert-trusted-im.key">
+      <Link>CA/server-cert-trusted-im.key</Link>
       <LogicalName>server-cert-trusted-im.key</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="server-cert-trusted-im.pem">
+    <EmbeddedResource Include="..\CA\server-cert-trusted-im.pem">
+      <Link>CA/server-cert-trusted-im.pem</Link>
       <LogicalName>server-cert-trusted-im.pem</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="server-cert-trusted-im.pfx">
+    <EmbeddedResource Include="..\CA\server-cert-trusted-im.pfx">
+      <Link>CA/server-cert-trusted-im.pfx</Link>
       <LogicalName>server-cert-trusted-im.pfx</LogicalName>
     </EmbeddedResource>
-    <EmbeddedResource Include="server-cert-im-full.pfx">
+    <EmbeddedResource Include="..\CA\server-cert-im-full.pfx">
+      <Link>CA/server-cert-im-full.pfx</Link>
       <LogicalName>server-cert-im-full.pfx</LogicalName>
     </EmbeddedResource>
   </ItemGroup>

@@ -55,12 +55,12 @@
     <Reference Include="Mono.Android" />
     <Reference Include="System.Numerics" />
     <Reference Include="System.Numerics.Vectors" />
+    <Reference Include="Mono.Security" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="MartinTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -105,11 +105,40 @@
     <PackageReference Include="Xamarin.Essentials" Version="1.1.0" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Hamiller-Tube-CA.key" />
-    <EmbeddedResource Include="Hamiller-Tube-CA.pem" />
-    <EmbeddedResource Include="Hamiller-Tube-IM.key" />
-    <EmbeddedResource Include="Hamiller-Tube-IM.pem" />
+    <EmbeddedResource Include="CA\Hamiller-Tube-CA.key">
+      <Link>CA/Hamiller-Tube-CA.key</Link>
+      <LogicalName>Hamiller-Tube-CA.key</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\Hamiller-Tube-CA.pem">
+      <Link>CA/Hamiller-Tube-CA.pem</Link>
+      <LogicalName>Hamiller-Tube-CA.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\Hamiller-Tube-IM.key">
+      <Link>CA/Hamiller-Tube-IM.key</Link>
+      <LogicalName>Hamiller-Tube-IM.key</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\Hamiller-Tube-IM.pem">
+      <Link>CA/Hamiller-Tube-IM.pem</Link>
+      <LogicalName>Hamiller-Tube-IM.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\server-cert-trusted-im.key">
+      <Link>CA/server-cert-trusted-im.key</Link>
+      <LogicalName>server-cert-trusted-im.key</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\server-cert-trusted-im.pem">
+      <Link>CA/server-cert-trusted-im.pem</Link>
+      <LogicalName>server-cert-trusted-im.pem</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\server-cert-trusted-im.pfx">
+      <Link>CA/server-cert-trusted-im.pfx</Link>
+      <LogicalName>server-cert-trusted-im.pfx</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CA\server-cert-im-full.pfx">
+      <Link>CA/server-cert-im-full.pfx</Link>
+      <LogicalName>server-cert-im-full.pfx</LogicalName>
+    </EmbeddedResource>
   </ItemGroup>
+  <Import Project="Shared\Shared.projitems" Label="Shared" Condition="Exists('Shared\Shared.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
     Other similar extension points exist, see Microsoft.Common.targets.

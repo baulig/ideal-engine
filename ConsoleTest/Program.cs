@@ -37,17 +37,7 @@ namespace ConsoleTest
 		{
 			Utils.Initialize ();
 
-			var serverTask = Server.Run ();
-			var clientTask = Client.Run ();
-
-			while (!clientTask.IsCompleted || !serverTask.IsCompleted) {
-				await Task.WhenAny (clientTask, serverTask).ConfigureAwait (false);
-
-				if (serverTask.IsCompleted)
-					await serverTask;
-				if (clientTask.IsCompleted)
-					await clientTask;
-			}
+			await MartinTest.Run ();
 		}
 	}
 }

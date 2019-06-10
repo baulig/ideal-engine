@@ -8,6 +8,8 @@ using Android.Views;
 using Android.Widget;
 
 namespace DroidTest {
+	using Shared;
+
 	[Activity (Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
 	public class MainActivity : AppCompatActivity {
 
@@ -22,6 +24,8 @@ namespace DroidTest {
 
 			FloatingActionButton fab = FindViewById<FloatingActionButton> (Resource.Id.fab);
 			fab.Click += FabOnClick;
+
+			MartinTest.Run ();
 		}
 
 		public override bool OnCreateOptionsMenu (IMenu menu)

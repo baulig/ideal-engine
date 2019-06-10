@@ -12,5 +12,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Server.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Client.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Utils.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MartinTest.cs" />
   </ItemGroup>
 </Project>

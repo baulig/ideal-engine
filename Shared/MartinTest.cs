@@ -24,10 +24,24 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 using System;
-namespace DroidTest {
-	public class MartinTest {
-		public MartinTest ()
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Shared {
+	public static class MartinTest {
+		public static async Task Run ()
 		{
+			var serverTask = Server.Run ();
+			var clientTask = Client.Run ();
+
+			while (!clientTask.IsCompleted || !serverTask.IsCompleted) {
+				await Task.WhenAny (clientTask, serverTask).ConfigureAwait (false);
+
+				if (serverTask.IsCompleted)
+					await serverTask;
+				if (clientTask.IsCompleted)
+					await clientTask;
+			}
 		}
 	}
 }
